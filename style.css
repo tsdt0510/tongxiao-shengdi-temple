@@ -1,0 +1,620 @@
+
+/* 通霄聖帝宮：網站主色 */
+:root {
+  --temple-red: #64171d;
+  --deep-red: #2b0b0e;
+  --temple-gold: #dfbd76;
+  --cream: #f8f1e5;
+}
+
+/* 全站基本設定 */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Microsoft JhengHei",
+    "Noto Sans TC", sans-serif;
+  color: #332722;
+  background: var(--cream);
+  line-height: 1.9;
+}
+
+/* 首頁主視覺 */
+.hero {
+  min-height: 600px;
+  padding: 100px 24px;
+  background-position: center 45%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+
+background:
+  linear-gradient(
+    rgba(43, 11, 14, 0.48),
+    rgba(43, 11, 14, 0.72)
+  ),
+  url("images/main-temple.jpg") center 45% / cover no-repeat;
+
+  border: 10px solid var(--deep-red);
+  outline: 1px solid var(--temple-gold);
+  outline-offset: -22px;
+}
+
+.hero h1 {
+  margin: 10px 0;
+  color: var(--temple-gold);
+  font-size: clamp(40px, 7vw, 72px);
+  letter-spacing: 8px;
+  line-height: 1.4;
+}
+
+.hero p {
+  margin: 8px 0;
+}
+
+/* 金色按鈕 */
+.btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 30px;
+  color: var(--deep-red);
+  background: var(--temple-gold);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background: #f5dfaa;
+}
+
+/* 一般內容區 */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.section h2 {
+  color: var(--temple-red);
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+.section p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 手機版 */
+@media (max-width: 600px) {
+.hero {
+  min-height: 480px;
+  padding: 72px 20px;
+  background-position: center 45%;
+  background-size: cover;
+}
+
+  .hero h1 {
+    font-size: 38px;
+    letter-spacing: 3px;
+  }
+
+  .section {
+    padding: 42px 20px;
+  }
+}
+
+/* ===== 官方網站導覽列 ===== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #2b0b0e;
+  border-bottom: 1px solid #dfbd76;
+}
+
+.navbar {
+  max-width: 1200px;
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 12px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  color: #dfbd76;
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-links a {
+  color: #fff7eb;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #dfbd76;
+}
+
+/* 電腦版預設隱藏漢堡按鈕 */
+
+.menu-btn {
+  display: none;
+}
+
+/* ===== 手機版導覽列 ===== */
+
+@media (max-width: 760px) {
+  .navbar {
+    min-height: 66px;
+    padding: 10px 18px;
+  }
+
+  .logo {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .menu-btn {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    background: transparent;
+    border: 1px solid #dfbd76;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #dfbd76;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    padding: 12px 22px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    background: #2b0b0e;
+    border-bottom: 1px solid #dfbd76;
+    box-shadow: 0 10px 20px #0003;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 4px;
+    font-size: 15px;
+    border-bottom: 1px solid #ffffff20;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: 0;
+  }
+}
+/* 主祀神尊介紹卡片 */
+.section-intro {
+  margin-bottom: 32px;
+}
+
+.god-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 850px;
+  margin: 32px auto 0;
+}
+
+.god-card {
+  padding: 28px 22px;
+  background: #fffaf1;
+  border: 1px solid #dfbd76;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px #2b0b0e12;
+}
+
+.god-image-placeholder {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #64171d;
+  border: 3px solid #dfbd76;
+  color: #dfbd76;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.god-card h3 {
+  color: #64171d;
+  font-size: 23px;
+  margin: 12px 0;
+}
+
+.god-card p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* 手機版改成上下排列 */
+@media (max-width: 600px) {
+  .god-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .god-card {
+    padding: 24px 18px;
+  }
+}
+
+
+/* 最新消息公告卡片 */
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+
+  width: 100%;
+  max-width: 1100px;
+  margin: 32px auto 0;
+  box-sizing: border-box;
+
+  text-align: left;
+}
+
+
+.news-card {
+  padding: 24px;
+  background: #fffaf1;
+  border: 1px solid #dfbd76;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px #2b0b0e12;
+}
+
+.news-label {
+  display: inline-block;
+  padding: 3px 12px;
+  color: #dfbd76;
+  background: #64171d;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.news-card h3 {
+  margin: 14px 0 8px;
+  color: #64171d;
+  font-size: 20px;
+}
+
+.news-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+@media (max-width: 760px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* 祈福服務卡片 */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 32px auto 0;
+  box-sizing: border-box;
+}
+
+.service-card {
+  padding: 28px 22px;
+  background: #fffaf1;
+  border: 1px solid #dfbd76;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 6px 18px #2b0b0e12;
+}
+
+.service-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #64171d;
+  border: 2px solid #dfbd76;
+  color: #dfbd76;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.service-card h3 {
+  margin: 12px 0;
+  color: #64171d;
+  font-size: 22px;
+}
+
+.service-card p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.service-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 18px;
+  background: #64171d;
+  color: #dfbd76;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.service-link:hover {
+  background: #84272e;
+}
+
+@media (max-width: 760px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* 聯絡我們 */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 32px auto 0;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.contact-card {
+  padding: 28px;
+  background: #fffaf1;
+  border: 1px solid #dfbd76;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px #2b0b0e12;
+}
+
+.contact-card h3 {
+  margin-top: 0;
+  color: #64171d;
+  font-size: 23px;
+}
+
+.contact-card p {
+  overflow-wrap: anywhere;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  padding: 8px 14px;
+  color: #dfbd76;
+  background: #64171d;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.social-links a:hover {
+  background: #84272e;
+}
+
+.contact-note {
+  color: #76665d;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-card {
+    padding: 22px 18px;
+  }
+}
+
+/* 聯絡電話與 Google 地圖 */
+.contact-phone {
+  color: #64171d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-phone:hover {
+  color: #9b3939;
+  text-decoration: underline;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: #64171d;
+  color: #dfbd76;
+  text-decoration: none;
+  border: 1px solid #dfbd76;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.map-link:hover {
+  background: #84272e;
+}
+
+.map-frame {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border: 1px solid #dfbd76;
+  border-radius: 6px;
+}
+
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 760px) {
+  .map-frame {
+    height: 280px;
+  }
+
+  .map-link {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* ===== 網站正式頁尾 ===== */
+.site-footer {
+  padding: 48px 24px 22px;
+  color: #fff7eb;
+  background: #2b0b0e;
+  border-top: 3px solid #dfbd76;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-brand h2 {
+  margin: 0 0 8px;
+  color: #dfbd76;
+  font-size: 28px;
+  letter-spacing: 3px;
+}
+
+.footer-brand p {
+  margin: 0;
+  color: #f8f1e5;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 24px;
+  margin: 28px 0;
+}
+
+.footer-links a,
+.footer-contact a {
+  color: #dfbd76;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-contact {
+  padding: 18px 0;
+  border-top: 1px solid #dfbd7640;
+  border-bottom: 1px solid #dfbd7640;
+}
+
+.footer-contact p {
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+
+.footer-copy {
+  margin: 24px 0 0;
+  color: #d8c8b9;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 36px 20px 20px;
+  }
+
+  .footer-brand h2 {
+    font-size: 24px;
+  }
+
+  .footer-links {
+    gap: 14px 18px;
+  }
+
+  .footer-contact {
+    font-size: 14px;
+  }
+}
