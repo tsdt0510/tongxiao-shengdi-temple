@@ -628,3 +628,41 @@ background:
     font-size: 14px;
   }
 }
+
+/* 官方社群連結 */
+.social-heading {
+  margin-top: 28px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 11px 16px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.social-link:hover {
+  opacity: 0.85;
+}
+
+.social-facebook {
+  background: #1877f2;
+}
+
+.social-instagram {
+  background: #c13584;
+}
+
+.social-line {
+  background: #06c755;
+}
